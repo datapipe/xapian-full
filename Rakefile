@@ -23,7 +23,8 @@ task :default do
 	Dir.chdir core do
 		system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix}"
 		ENV['LDFLAGS'] = "-R#{prefix}/lib"
-		system! "make clean all"
+        # AMT - really, we don't need to clean all here
+		#system! "make clean all"
 		ENV['LDFLAGS'] = ""
 		system! "cp -RL .libs/* ../lib/"
 	end
@@ -33,7 +34,8 @@ task :default do
 		ENV['XAPIAN_CONFIG'] = xapian_config
 		system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix} --with-ruby"
 		ENV['LDFLAGS'] = "-R#{prefix}/lib"
-		system! "make clean all"
+        # AMT - really, we don't need to clean all here
+		#system! "make clean all"
 		ENV['LDFLAGS'] = ""
 	end
 
