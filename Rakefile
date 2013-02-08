@@ -25,6 +25,7 @@ task :default do
 		ENV['LDFLAGS'] = "-R#{prefix}/lib"
         # AMT - really, we don't need to clean all here
 		#system! "make clean all"
+		system! "make all"
 		ENV['LDFLAGS'] = ""
 		system! "cp -RL .libs/* ../lib/"
 	end
@@ -36,6 +37,7 @@ task :default do
 		ENV['LDFLAGS'] = "-R#{prefix}/lib"
         # AMT - really, we don't need to clean all here
 		#system! "make clean all"
+		system! "make all"
 		ENV['LDFLAGS'] = ""
 	end
 
